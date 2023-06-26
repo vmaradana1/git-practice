@@ -1,64 +1,163 @@
-# Lists - Orderded , mutable , collection of values []
-# Dictionaries - Unorderded , mutable, collection of key pair of values {"Key":"Value}
-# Tuples - Orderded , immutable , collection of values ()
-# Sets - Unorderded , mutable, collection of unique values {"value1" , "value2"}
+# Different ways of storing data
+# Lists - ordered, mutable, collection of values []
+# Dictionaries - unordered, mutable, collections of key-pair values {"Key":"value"}
+# Tuples - ordered, immutable, colection of values ()
+# Sets - unordered, mutable collection of unique values {"value1", "value2"}
 
-#Lists stored in a variable
-colours = ['Red', 'Blue', 'Pink']
+# lists are stored in a variable []
 
-print (colours)
+#colours = ["Blue", "red", "green", "yellow"]
+#
+#print(colours)
 
-#starts at 0 and from backwards starts at -1
-print (colours[1])
-print (colours[-2])
+#referencing - elements in alist are referenced by the index position
+# starts at 0 and -1 going backwards
 
-#Slicing - range [:]
+#print(colours[0])
+#print(colours[-4])
 
-print (colours[0:2])
-print (colours[0:])
-print (colours[-3:])
+#slicing - create a sub-list up to but not including the 2nd number in our range
 
-food =['bread', 'cheese' , 'apple', "jam"]
-print (food)
-#altering list
-food[0] ='rice'
-del food[1]
-print(food)
+#print(colours[0:2])
+#print(colours[1:])
 
-#checking if item exits 
+# altering lists - use index position, need a vlaue, delete with del
 
-print ('cheese' in food ) 
-print ('jam' in food )
+#food = ["bread", "cheese", "pasta", "apple"]
 
-#nested lists
+#food[0] = "rice"
+#del food[1]
 
-numbers =[1,2,3,4,5]
-letters = ['a','b','c','d','e']
+#print(food)
 
-combined = [numbers,letters]
+# checking if item in a list
 
-print (combined[0][1],combined[1][1])
+#print("pasta" in food)
+#print("orange" in food)
 
-#multiple data types 
-my_list=['a',2,['red','blue'],3.5]
-my_list.append('test')
-print (my_list)
-#print (my_list[0][1])
-print (my_list[0])
-my_list.remove('test')
-print (my_list)
+# nested lists
 
-#insert
-my_list.insert(0,'mango')
-print (my_list)
+#numbers = [1, 2, 3, 4]
+#letters = ["a", "b", "c", "d"]
 
-#extend a list 
-my_list.extend('grapes')
-print(my_list)
+#combined = [numbers, letters]
 
-#join
-my_list=['test','tester']
+#print(combined[0][1], combined[1][1])
 
-x=",".join(my_list)
+# multiple data types
+#my_list = ["red", 5, ["green", "apple"], 10.5]
+
+#print(my_list)
+#print(my_list[2][1])
+#print(my_list[0])
+
+# List methods
+
+# append
+
+my_fruits = ["apple", "orange", "kiwi"]
+my_fruits.append("pear")
+print(my_fruits)
+
+#remove
+
+my_fruits.remove("apple")
+print(my_fruits)
+
+# insert
+
+my_fruits.insert(0, "mango")
+my_fruits.insert(0, "melon")
+print(my_fruits)
+
+# extend (with a list)
+
+my_fruits.extend(["grapes", "cherry"])
+print(my_fruits)
+
+# Finding index position
+
+print(my_fruits.index("mango"))
+
+# reversing a list
+
+my_fruits.reverse()
+print(my_fruits)
+
+# sorting 
+
+my_fruits.sort()
+print(my_fruits)
+
+my_fruits.sort(key=len)
+print(my_fruits)
+
+# join
+
+x = ", ".join(my_fruits)
 print(x)
+
+# Dictionaries {} key:values pairs
+# similar to a list, no indexing. 
+# Keys have to have unique values dont. 
+
+drinks = {"fizzy": "sprite", "still": "water", "juice": "orange", "alcohlic": "wine"}
+print(drinks)
+print(drinks["still"]) # cant query values only keys 
+
+# adding to a dictionary
+
+drinks["non-alcohlic"] = "water"
+print(drinks)
+
+# Overwrite 
+
+drinks["non-alcohlic"] = "squash"
+print(drinks)
+
+# return all values or keys or both
+
+print(drinks.values())
+print(drinks.keys())
+print(drinks.items())
+
+print("water" in drinks.values())
+print("still" in drinks)
+
+# get method
+
+print(drinks.get("still"))
+print(drinks.get("stille", "not found"))
+print(drinks.get("stillie"))
+
+# update
+
+drinks.update({"sugary": "cola"})
+#or
+drinks.update(very_sugary = "red bull")
+print(drinks)
+
+# Pop
+
+print(drinks.pop("non-alcohlic"))
+print(drinks.pop("non-alcohlic", "not-found"))
+print(drinks)
+
+# exercise:
+
+books = {"the handmaiden's tale": ["atwood", "something else"], "the hobbit": "tolkien"}
+
+print(books["the handmaiden's tale"])
+
+# make a dictionary of books, with 3 authors and multiple books per author. 
+# use an input() asking for an author name. 
+# print back as a string the list of books by the author.
+# Use the .join() method.
+
+
+
+
+
+
+
 
