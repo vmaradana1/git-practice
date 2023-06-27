@@ -6,11 +6,11 @@ IntresetRate = 10
 NumberofYears = 1
 
 while intialinvestment < 1000 :
-    print(f"intialinvestment : {intialinvestment}")
+    #print(f"intialinvestment : {intialinvestment}")
     newamount = (intialinvestment * 10)/100
-    print(f"newamount : {newamount}")
+    #print(f"newamount : {newamount}")
     intialinvestment=intialinvestment+newamount
-    print(f"intialinvestment after calculation :{intialinvestment}" )
+    #print(f"intialinvestment after calculation :{intialinvestment}" )
     NumberofYears = NumberofYears + 1
     #print(NumberofYears)
     if (intialinvestment>=1000):
