@@ -1,4 +1,4 @@
-import math()
+
 print ("Pythogras Menu :")
 print( "Find Length of A given B & C - 1 + \n Find Length of B given A & C 2 \n Find Length of C given A & B 3 ")
 option = input ("Enter option : ")
