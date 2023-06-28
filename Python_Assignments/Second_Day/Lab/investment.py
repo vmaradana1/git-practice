@@ -6,13 +6,9 @@ TragetValue = int(input ("Enter TragetValue : "))
 NumberofYears = 1
 
 while intialinvestment < TragetValue :
-    #print(f"intialinvestment : {intialinvestment}")
     newamount = (intialinvestment * IntresetRate)/100
-    #print(f"newamount : {newamount}")
     intialinvestment=intialinvestment+newamount
-    #print(f"intialinvestment after calculation :{intialinvestment}" )
     NumberofYears = NumberofYears + 1
-    #print(NumberofYears)
     if (intialinvestment>=TragetValue):
         break
 
