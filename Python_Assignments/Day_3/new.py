@@ -1,8 +1,25 @@
-data="100,30,53,67,85,87,50,45,51,72,64,69,59,17,22,23,44,25,16,67,85,87,50,45,51,72,59,14,50,55,32,23,24,25,37,28,39,30,33,35,40,34,41,43,94,95,59,98,99,44,45,47,48,49,53,61,63,69,75,77,60,83"
-print(type(data))
-#grades=data.split(",")
-#grades = list(map(int, grades))
-data = [int(data) for data in data.split(",") ]
-print(type(data))
+def security(password):
+    plist=("password","password1","password2")
+    length=len(plist)
+    for i in range (0,length):
+        newpassword = plist[i]
+        if {newpassword} == {password}:
+                print(f"Not Accepted as it matches with standard password {plist[i]}")
+                return
+    
+    print ("Password Accepted")  
+    
+password = input("Please Enter Password : ")
+password1=security(password)
+#print(password1)
 
-print(data[10])
+
+def calc(num1,num2):
+    x = num1 + num2
+    
+    return (f"Sum is : {x}")
+num1 = int(input("Enter first number :" ))
+num2 = int(input("Enter Second number :" ))
+sum=addition(num1,num2)
+print(sum)
+print(addition(num1,num2))
