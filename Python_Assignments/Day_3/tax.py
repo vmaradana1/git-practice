@@ -3,7 +3,7 @@ def tax_calc(updatedsal):
     if updatedsal > 0 and updatedsal < 34500:
         updatedsal = ((updatedsal * 20)/100)
         return updatedsal
-    elif 34501 > updatedsal < 150000:
+    elif 34501 < updatedsal < 150000:
         updatedsal = (updatedsal * 40)/100
         return updatedsal
     else:
