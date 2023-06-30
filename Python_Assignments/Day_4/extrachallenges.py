@@ -146,6 +146,10 @@ class Book:
         self.publisher = publisher
         self.publicationyear = publicationyear
         
+    def __str__(self):
+        return (f"title : {self.title} \n author: {self.author} \n publication : {self.publisher} \n year : {self.publicationyear} ")
+       
+        
 class BookShelf:
     def __init__(self, capacity):
         self.capacity = capacity 
@@ -166,6 +170,9 @@ class BookShelf:
             print('Book doesnt exist')     
             
  #method find book by author 
+  #  def find_book(self,book):
+   #     if book in self.bookslist:
+    #        self.bookslist.
 
  #method find book by title 
  
@@ -180,9 +187,11 @@ class BookShelf:
         
 book1 = Book('title1','author1','publisher1',2009)
 bookshelf = BookShelf(4)
-print(bookshelf)
+#print(bookshelf)
 bookshelf.add_book(book1)
+#print(bookshelf)
 bookshelf.remove_book(book1)
+bookshelf.find_book("title1")
 
         
     
