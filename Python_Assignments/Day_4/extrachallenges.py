@@ -139,7 +139,53 @@ print(f"Total updated Quantity is : {removedQuantity}")
 #The class should also have a str method that returns a string representation 
 #of the books on the shelf. 
 
+class Book:
+    def __init__(self,title,author,publisher,publicationyear):
+        self.title = title
+        self.author = author
+        self.publisher = publisher
+        self.publicationyear = publicationyear
+        
+class BookShelf:
+    def __init__(self, capacity):
+        self.capacity = capacity 
+        self.bookslist = []
+    
+    def add_book(self,book):
+        if len(self.bookslist) < self.capacity:
+            self.bookslist.append(book)
+            print(f"{book.title} has been added")
+        else:
+            print ('SHELF is FULL')
+            
+    def remove_book(self,book):
+        if book in self.bookslist:
+            self.bookslist.remove(book)
+            print(f"{book.title} has been removed")
+        else:
+            print('Book doesnt exist')     
+            
+ #method find book by author 
 
+ #method find book by title 
+ 
+    def __str__(self):
+        if not self.bookslist:
+            return "Shelf is Empty"
+        else:
+            output = "Books on the SHELF : \n "
+            for book in self.bookslist:
+                output += str(book) + "\n\n"
+            return output
+        
+book1 = Book('title1','author1','publisher1',2009)
+bookshelf = BookShelf(4)
+print(bookshelf)
+bookshelf.add_book(book1)
+bookshelf.remove_book(book1)
+
+        
+    
 
 #Create four Book objects and add them to a BookShelf object with a capacity of three. 
 #Test the BookShelf object by adding, removing, and finding books by title and author.
