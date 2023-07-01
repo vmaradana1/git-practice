@@ -201,9 +201,6 @@ class BookShelf:
 
         
 book1 = Book('title1','author1','publisher1',2009)
-book2 = Book('title2','author2','publisher2',2109)
-book3 = Book('title3','author3','publisher3',2209)
-book4 = Book('title4','author4','publisher4',2309)
 
 bookshelf = BookShelf(4)
 bookshelf.add_book(book1)
