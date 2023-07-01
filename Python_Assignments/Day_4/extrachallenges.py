@@ -169,13 +169,6 @@ class BookShelf:
         else:
             print('Book doesnt exist')     
             
- #method find book by author 
-  #  def find_book_author(self,book):
-   #     if book in self.bookslist:
-    #        self.bookslist.
-
- #method find book by title 
- 
     def __str__(self):
         if not self.bookslist:
             return "Shelf is Empty"
@@ -184,12 +177,42 @@ class BookShelf:
             for book in self.bookslist:
                 output += str(book) + "\n\n"
             return output
+    
+#method find book by author 
+    def find_book_author(self,book,checkauthor):
+        for book in self.bookslist:
+            if checkauthor == book1.author:
+                output1= (f"{book1.author} book exists \n related book details are as follows")
+                output1 += str(book) + "\n\n"
+                print (output1)
+            else:
+                print (f"{book1.author} book doesn't exists")
+
+ #method find book by title
+    def find_book_title(self,book,checktitle):
+        for book in self.bookslist:
+            if checktitle == book1.title:
+                output2= (f"{book1.title} related book exists \n related book information are as follows : \n")
+                output2 += str(book) + "\n\n"
+                print (output2)
+
+            else:
+                print (f"{book1.title} related book doesn't exists")
+
         
 book1 = Book('title1','author1','publisher1',2009)
+book2 = Book('title2','author2','publisher2',2109)
+book3 = Book('title3','author3','publisher3',2209)
+book4 = Book('title4','author4','publisher4',2309)
+
 bookshelf = BookShelf(4)
-#print(bookshelf)
 bookshelf.add_book(book1)
-print(bookshelf)
+checkauthor=book1.author
+checkauthor = input(f"Author to find : ")
+bookshelf.find_book_author(book1,checkauthor)
+checktitle=book1.title
+checktitle = input(f"Title to find : ")
+bookshelf.find_book_title(book1,checktitle)
 #bookshelf.remove_book(book1)
 #bookshelf.find_book("title1")
 
