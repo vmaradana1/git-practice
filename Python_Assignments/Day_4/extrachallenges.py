@@ -201,9 +201,16 @@ class BookShelf:
 
         
 book1 = Book('title1','author1','publisher1',2009)
+"""book2 = Book('title2','author2','publisher2',2019)
+book3 = Book('title3','author3','publisher3',2029)
+book4 = Book('title4','author4','publisher4',2039)"""
+
 
 bookshelf = BookShelf(4)
+
+
 bookshelf.add_book(book1)
+
 checkauthor=book1.author
 checkauthor = input(f"Author to find : ")
 bookshelf.find_book_author(book1,checkauthor)
