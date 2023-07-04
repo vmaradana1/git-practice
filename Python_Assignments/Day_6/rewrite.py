@@ -1,3 +1,4 @@
+import sys
 class Verify_Password:
     def __init__(self, password):
         self.password = password
@@ -34,25 +35,28 @@ class Verify_Password:
             self.password_strength = 0
 
     def standardpasswords(self,password):
-        standardlist=["password","test","password1","password2","tester",1234567,"qwerty","@@@@@@"]
-        for passwords in standardlist:
-            if password == standardlist:
-                print (f"matched password is : {password}")
+        standardlist=["password","test","password1","password2","tester","1234567","qwerty","@@@@@@"]
+        for i in range(len(standardlist)):
+            temp=standardlist[i]
+            if password == temp:
+                print (f"One of the standard password is Matched : {password} so you have WEAK PASSWORD")
                 self.password_strength = 0
+                sys.exit()
         else:
+            print (f"Password strength befor else : {self.password_strength}")
             self.password_strength +=1
         
-    def rating(self,password):
-        if self.password_strength < 1:
+    def rating(self,password_strength):
+        if self.password_strength <= 1:
             status = "Weak password"
             return status
-        elif self.password_strength < 2:
+        elif self.password_strength <= 2:
             status = "Medium password"
             return status
-        elif self.password_strength < 3:
+        elif self.password_strength <= 3:
             status = "Strong password"
             return status
-        elif self.password_strength < 4:
+        elif self.password_strength <= 4:
             status = "Very Strong password"
             return status
 
@@ -61,16 +65,15 @@ while True:
     if len(userpassword) > 0:
         check1=Verify_Password(userpassword)
         check1.checklength(userpassword)
-        #print (f"Counter for checklength : {check1.password_strength}")
+        print (f"Counter for checklength : {check1.password_strength}")
         check1.checkalpha(userpassword)
-        #print (f"Counter for checkalpha : {check1.password_strength}")
+        print (f"Counter for checkalpha : {check1.password_strength}")
         check1.checkalpha(userpassword)
-        #print (f"Counter for checkcase : {check1.password_strength}")
+        print (f"Counter for checkcase : {check1.password_strength}")
         check1.standardpasswords(userpassword)
-        #print (f"Counter for standardpasswords : {check1.password_strength}")
-        check1.rating(check1.password_strength)
-        check
-        print (f"Counter for standardpasswords :{check1.password_strength} so rating is : {status}")
+        print (f"Counter for standardpasswords : {check1.password_strength}")
+        finalstatus = check1.rating(check1.password_strength)
+        print (f"Counter for standardpasswords :{check1.password_strength} so rating is : {finalstatus}")
     else:
         print("invalid Input")
     break
