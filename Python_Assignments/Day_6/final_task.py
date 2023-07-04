@@ -9,63 +9,75 @@
 # A dictionary that returns a history of passwords/strengths whilst in the loop.
 
 
+
 class Verify_Password:
     def __init__(self, password):
         self.password = password
+        self.password_strength = password_strength
         
-    #password_strength = 0
-
-    def checklength(password):
-        password_strength = 0 
-        if len(password) > 6:
-            return True
-            #password_strength += 1
+    def checklength(self,password):
+        if len(password) > 6 and len(password) < 10 :
+            self.password_strength += 1
+        elif len(self.password) < 10:
+            self.password_strength += 1
         else:
-            return False
-            #password_strength = 0
-        
+            self.password_strength = 0   
+            #return False  
 
     def checkalpha(password):
         if password.isalpha() == True:
-            password_strength += 1
-        elif password.isnumeric() == True:
-            password_strength += 1
-        elif password.isalnum() == True:
-            password_strength += 1
-        elif password.isnumeric() and password.isalpha() and password.isalnum() == True:
-            password_strength += 1
-        elif password.isnumeric() and password.isalpha() == True:
-            password_strength += 1
-        else:
-            password_strength =0
+            #password_strength += 1
+           return True
             
-''''       
-    def checkstandard(self,password):
-        pass
-    
+        elif password.isnumeric() == True:
+            #password_strength += 1
+            return True
+        elif password.isalnum() == True:
+            #password_strength += 1
+            return True
+        elif password.isnumeric() and password.isalpha() and password.isalnum() == True:
+            #password_strength += 1
+            return True
+        elif password.isnumeric() and password.isalpha() == True:
+            #password_strength += 1
+            return True
+        else:
+            #password_strength =0
+            return False
+
     def checkcase(self,password):
         if password.islower():
-            return 1
+            return True
         elif password.isupper():
-            return 2
-        elif password.islower() and password.isupper()
-            return 3
+            return True
+        elif password.islower() and password.isupper():
+            return True
         else:
             return False 
-'''
-    
-password_strength=0
+
+password_strength =0 
 
 userpassword= input("Enter Password: ")
 
 while True:
     if len(userpassword) > 0:
-        check1 = Verify_Password.checklength(userpassword)
+        check1=Verify_Password.checklength(userpassword)
+        if check1 is True:
+            #password_strength=+1
+            print (f"Counter for length : {password_strength}")
+            break
         #check2 = Verify_Password.checkalpha(userpassword)
-        #check3 = Verify_Password.checkstandard(userpassword)
-        #check4 = Verify_Password.checkcase(userpassword)
-    print (password_strength)
+        #if check2 is True:
+            #password_strength=+1
+            print (f"Counter for Alpha: {password_strength}")
+            #break
         
+        #check3 = Verify_Password.checkcase(userpassword)
+        #if check3 is True:
+            
+        else:
+            print("Meesage needs to be changed")
+            break
         
     
     
