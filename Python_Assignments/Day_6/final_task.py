@@ -13,22 +13,21 @@
 class Verify_Password:
     def __init__(self, password):
         self.password = password
-        self.password_strength = password_strength
+        self.password_strength = 0
         
-    def checklength(self,password):
+    def checklength(password):
         if len(password) > 6 and len(password) < 10 :
-            self.password_strength += 1
-        elif len(self.password) < 10:
-            self.password_strength += 1
+            password_strength += 1
+        elif len(password) < 10:
+            password_strength += 1
         else:
-            self.password_strength = 0   
+            password_strength = 0   
             #return False  
 
     def checkalpha(password):
         if password.isalpha() == True:
             #password_strength += 1
-           return True
-            
+           return True   
         elif password.isnumeric() == True:
             #password_strength += 1
             return True
@@ -46,7 +45,7 @@ class Verify_Password:
             return False
 
     def checkcase(self,password):
-        if password.islower():
+        if str(password.islower()):
             return True
         elif password.isupper():
             return True
@@ -55,21 +54,18 @@ class Verify_Password:
         else:
             return False 
 
-password_strength =0 
-
-userpassword= input("Enter Password: ")
 
 while True:
+    userpassword= input("Enter Password: ")
     if len(userpassword) > 0:
         check1=Verify_Password.checklength(userpassword)
+        print
         if check1 is True:
-            #password_strength=+1
-            print (f"Counter for length : {password_strength}")
-            break
+            print (f"Counter for length : {check1.password_strength}")
         #check2 = Verify_Password.checkalpha(userpassword)
         #if check2 is True:
             #password_strength=+1
-            print (f"Counter for Alpha: {password_strength}")
+            #print (f"Counter for Alpha: {password_strength}")
             #break
         
         #check3 = Verify_Password.checkcase(userpassword)
